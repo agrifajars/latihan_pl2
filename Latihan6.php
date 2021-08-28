@@ -1,4 +1,4 @@
-<h1>Input Mahasiswa</h2>
+<h1>Input Dosen</h2>
 <?php
 
     //Insert Connection Script
@@ -7,23 +7,23 @@
     //Click isset event 
     if(isset($_POST['proses'])){
         //Query Insert Data
-        $query = mysqli_query($conn,"insert into tbl_mahasiswa values(
+        $query = mysqli_query($conn,"insert into tbl_dosen values(
             '',
-            '".$_POST['npm']."',
-            '".$_POST['nama_mahasiswa']."'
+            '".$_POST['id_dosen']."',
+            '".$_POST['nama_dosen']."'
         )");
-    header('Location: Latihan1.php');
+    header('Location: Latihan5.php');
     }
 ?>
 
 <!-- Simple Html TAG -->
 <form action="" method="POST">
-    <b>NPM : </b>
-    <input type="text" name="npm">
+    <b>ID Dosen : </b>
+    <input type="text" name="id_dosen">
     <br>
     <br>
-    <b>Nama Mahasiswa : </b>
-    <input type="text" name="nama_mahasiswa">
+    <b>Nama Dosen : </b>
+    <input type="text" name="nama_dosen">
     <br>
     <br>
     <input type="submit" name="proses" value="Simpan">

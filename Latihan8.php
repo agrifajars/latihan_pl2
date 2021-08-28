@@ -1,4 +1,4 @@
-<h1>Hapus Mahasiswa</h2>
+<h1>Hapus Dosen</h2>
 <?php
 
     //Insert Connection Script
@@ -6,27 +6,27 @@
 
     //Get Value Url Params
     $id = $_GET['id'];
-    $npm = $_GET['npm'];
-    $nama_mahasiswa = $_GET['nama_mahasiswa'];
+    $id_dosen = $_GET['id_dosen'];
+    $nama_dosen = $_GET['nama_dosen'];
     
     //Click isset event 
     if(isset($_POST['proses'])){
         //Query Delete Data
         $query = mysqli_query($conn,"
-            delete from tbl_mahasiswa where id = $id
+            delete from tbl_dosen where id = $id
         ");
-    header('Location: Latihan1.php');
+    header('Location: Latihan5.php');
     }
 ?>
 
 <!-- Simple HTML tag -->
 <form action="" method="POST">
-    <b>NPM : </b>
-    <input type="text" name="npm" value="<?php echo $npm; ?>" disabled>
+    <b>ID Dosen : </b>
+    <input type="text" name="id_dosen" value="<?php echo $id_dosen; ?>" disabled>
     <br>
     <br>
-    <b>NAMA : </b>
-    <input type="text" name="nama" value="<?php echo $nama_mahasiswa; ?>" disabled>
+    <b>Nama Dosen : </b>
+    <input type="text" name="nama_dosen" value="<?php echo $nama_dosen; ?>" disabled>
     <br>
     <br>
     <input type="submit" name="proses" value="Hapus">
